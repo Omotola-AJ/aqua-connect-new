@@ -26,28 +26,72 @@ export default function OrderTracking() {
     return () => clearTimeout(timer);
   }, [state]);
 
+  const handleOrderComplete = () => {
+    setOrder(prev => ({ ...prev, status: 'delivered' }));
+  };
+
   return (
     <div className={styles.container}>
-      <h1 className={styles.sectionTitle}>Your Order</h1>
+      <div className={styles.header}>
+        <h1 className={styles.sectionTitle}>Order Tracking</h1>
+        <p className={styles.subtitle}>Real-time updates on your water delivery</p>
+      </div>
       
       <div className={styles.trackingCard}>
-        <h2>{order.vendor}</h2>
-        <p><strong>Quantity:</strong> {order.quantity}</p>
-        {order.price && <p><strong>Price:</strong> {order.price}</p>}
-        {order.address && <p><strong>Address:</strong> {order.address}</p>}
-        {order.payment && <p><strong>Payment:</strong> {order.payment === 'cash' ? 'Cash on Delivery' : 'Mobile Money'}</p>}
+        <div className={styles.orderHeader}>
+          <h2>{order.vendor}</h2>
+          <span className={`${styles.statusBadge} ${styles[order.status]}`}>
+            {order.status.replace('_', ' ')}
+          </span>
+        </div>
         
+        <div className={styles.orderDetails}>
+          <div className={styles.detailItem}>
+            <span className={styles.detailLabel}>Quantity:</span>
+            <span>{order.quantity}</span>
+          </div>
+          
+          {order.price && (
+            <div className={styles.detailItem}>
+              <span className={styles.detailLabel}>Price:</span>
+              <span>{order.price}</span>
+            </div>
+          )}
+          
+          {order.address && (
+            <div className={styles.detailItem}>
+              <span className={styles.detailLabel}>Address:</span>
+              <span>{order.address}</span>
+            </div>
+          )}
+          
+          {order.payment && (
+            <div className={styles.detailItem}>
+              <span className={styles.detailLabel}>Payment:</span>
+              <span>{order.payment === 'cash' ? 'Cash on Delivery' : 'Mobile Money'}</span>
+            </div>
+          )}
+        </div>
+
         {/* Status Steps */}
         <div className={styles.statusSteps}>
           <div className={`${styles.step} ${['preparing', 'en_route', 'delivered'].includes(order.status) ? styles.active : ''}`}>
-            <div className={styles.stepBubble}>1</div>
+            <div className={styles.stepBubble}>
+              {['en_route', 'delivered'].includes(order.status) ? '✓' : '1'}
+            </div>
             <span>Preparing</span>
           </div>
           
+          <div className={styles.stepConnector}></div>
+          
           <div className={`${styles.step} ${['en_route', 'delivered'].includes(order.status) ? styles.active : ''}`}>
-            <div className={styles.stepBubble}>2</div>
+            <div className={styles.stepBubble}>
+              {order.status === 'delivered' ? '✓' : '2'}
+            </div>
             <span>On the way</span>
           </div>
+          
+          <div className={styles.stepConnector}></div>
           
           <div className={`${styles.step} ${order.status === 'delivered' ? styles.active : ''}`}>
             <div className={styles.stepBubble}>3</div>
@@ -55,10 +99,25 @@ export default function OrderTracking() {
           </div>
         </div>
 
-        <p className={styles.eta}>
-          {order.status === 'preparing' ? 'Preparing your order' : `Arriving ${order.eta}`}
-        </p>
-        <p>Driver: {order.contact}</p>
+        <div className={styles.deliveryInfo}>
+          <p className={styles.eta}>
+            {order.status === 'preparing' 
+              ? 'Preparing your order' 
+              : order.status === 'en_route'
+                ? `Arriving ${order.eta}`
+                : 'Delivery completed'}
+          </p>
+          <p className={styles.contact}>Driver: {order.contact}</p>
+        </div>
+
+        {order.status !== 'delivered' && (
+          <button 
+            className={styles.confirmButton}
+            onClick={handleOrderComplete}
+          >
+            Confirm Delivery
+          </button>
+        )}
       </div>
     </div>
   );

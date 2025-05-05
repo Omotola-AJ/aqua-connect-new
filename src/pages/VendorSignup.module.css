@@ -1,115 +1,122 @@
 .authContainer {
-    max-width: 450px;
-    margin: 2rem auto;
-    padding: 2rem;
-    background: white;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0, 119, 204, 0.1);
-  }
-  
-  .authHeader {
-    text-align: center;
-    margin-bottom: 2rem;
+  max-width: 450px;
+  margin: 6rem auto 2rem; /* Increased top margin */
+  padding: 2rem;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 119, 204, 0.1);
+}
+
+.authHeader {
+  text-align: center;
+  margin-bottom: 2rem;
+  padding-top: 20px; /* Added padding */
+}
+
+.authHeader h1 {
+  color: #005588;
+  font-size: 1.8rem;
+  margin: 0;
+}
+
+.authForm {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.formGroup label {
+  font-weight: 600;
+  color: #333;
+  font-size: 0.95rem;
+}
+
+.formGroup input,
+.formGroup select {
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 1rem;
+  transition: border-color 0.3s;
+}
+
+.formGroup input:focus,
+.formGroup select:focus {
+  border-color: #0077cc;
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(0, 119, 204, 0.1);
+}
+
+.formGroup input::placeholder {
+  color: #aaa;
+}
+
+.formGroup select {
+  appearance: none;
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  background-size: 1em;
+}
+
+.authButton {
+  background: #009688;
+  color: white;
+  padding: 14px;
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s;
+  font-size: 1rem;
+  margin-top: 1rem;
+}
+
+.authButton:hover {
+  background: #00796b;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.authFooter {
+  margin-top: 2rem;
+  text-align: center;
+  color: #666;
+  font-size: 0.9rem;
+}
+
+.authLink {
+  color: #0077cc;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.authLink:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 480px) {
+  .authContainer {
+      margin: 4rem 1rem 2rem; /* Adjusted mobile margins */
+      padding: 1.5rem;
   }
   
   .authHeader h1 {
-    color: #005588;
-    font-size: 1.8rem;
-    margin: 0;
-  }
-  
-  .authForm {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-  }
-  
-  .formGroup {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-  }
-  
-  .formGroup label {
-    font-weight: 600;
-    color: #333;
-    font-size: 0.95rem;
+      font-size: 1.5rem;
   }
   
   .formGroup input,
   .formGroup select {
-    padding: 12px;
-    border: 1px solid #ddd;
-    border-radius: 6px;
-    font-size: 1rem;
-    transition: border-color 0.3s;
-  }
-  
-  .formGroup input:focus,
-  .formGroup select:focus {
-    border-color: #0077cc;
-    outline: none;
-    box-shadow: 0 0 0 3px rgba(0, 119, 204, 0.1);
-  }
-  
-  .formGroup input::placeholder {
-    color: #aaa;
-  }
-  
-  .formGroup select {
-    appearance: none;
-    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
-    background-repeat: no-repeat;
-    background-position: right 12px center;
-    background-size: 1em;
+      padding: 10px;
   }
   
   .authButton {
-    background: #009688;
-    color: white;
-    padding: 14px;
-    border: none;
-    border-radius: 6px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: background 0.3s;
-    font-size: 1rem;
-    margin-top: 1rem;
+      padding: 12px; /* Slightly smaller on mobile */
   }
-  
-  .authButton:hover {
-    background: #00796b;
-  }
-  
-  .authFooter {
-    margin-top: 2rem;
-    text-align: center;
-    color: #666;
-    font-size: 0.9rem;
-  }
-  
-  .authLink {
-    color: #0077cc;
-    text-decoration: none;
-    font-weight: 600;
-  }
-  
-  .authLink:hover {
-    text-decoration: underline;
-  }
-  
-  @media (max-width: 480px) {
-    .authContainer {
-      margin: 1rem;
-      padding: 1.5rem;
-    }
-    
-    .authHeader h1 {
-      font-size: 1.5rem;
-    }
-    
-    .formGroup input,
-    .formGroup select {
-      padding: 10px;
-    }
-  }
+}

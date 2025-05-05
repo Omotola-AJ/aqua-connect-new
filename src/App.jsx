@@ -6,6 +6,7 @@ import Dashboard from './pages/Dashboard';
 import Vendors from './pages/Vendors';
 import OrderTracking from './pages/OrderTracking';
 import SignupChoice from './pages/SignupChoice';
+import Login from './pages/Login';
 import ResidentSignup from './pages/ResidentSignup';
 import VendorSignup from './pages/VendorSignup';
 import OTPVerification from './pages/OTPVerification';
@@ -23,6 +24,7 @@ export default function App() {
           <Route path="/vendors" element={<Vendors />} />
           <Route path="/tracking" element={<OrderTracking />} />
           <Route path="/signup" element={<SignupChoice />} />
+          <Route path="/login" element={<Login />} />
           <Route path="/signup/resident" element={<ResidentSignup />} />
           <Route path="/signup/vendor" element={<VendorSignup />} />
           <Route path="/verify/otp" element={<OTPVerification />} />

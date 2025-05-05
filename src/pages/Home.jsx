@@ -7,11 +7,6 @@ export default function Home() {
       <header className={styles.welcomeHeader}>
         <h1>AQUACONNECT</h1>
         <p className={styles.tagline}>Find Water Vendors, Near You</p>
-        <div className={styles.valueProps}>
-          <span>✓ Verified Vendors</span>
-          <span>✓ Real-Time Tracking</span>
-          <span>✓ 24/7 Support</span>
-        </div>
       </header>
       <Link to="/welcome" className={styles.ctaButton}>
         Get Started

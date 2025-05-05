@@ -1,99 +1,220 @@
 .container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 2rem;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem;
+  padding-top: 6rem;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+
+.sectionTitle {
+  font-size: 2rem;
+  color: #005588;
+  margin-bottom: 0.5rem;
+  font-weight: 700;
+}
+
+.subtitle {
+  color: #0077aa;
+  font-size: 1.1rem;
+  opacity: 0.9;
+}
+
+.trackingCard {
+  background: white;
+  padding: 2.5rem;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 119, 204, 0.1);
+}
+
+.orderHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.orderHeader h2 {
+  color: #0077CC;
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+.statusBadge {
+  padding: 0.4rem 1rem;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+.statusBadge.preparing {
+  background: #FFF3E0;
+  color: #E65100;
+}
+
+.statusBadge.en_route {
+  background: #E3F2FD;
+  color: #0D47A1;
+}
+
+.statusBadge.delivered {
+  background: #E8F5E9;
+  color: #2E7D32;
+}
+
+.orderDetails {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2.5rem;
+}
+
+.detailItem {
+  display: flex;
+  flex-direction: column;
+}
+
+.detailLabel {
+  font-weight: 600;
+  color: #555;
+  font-size: 0.9rem;
+  margin-bottom: 0.3rem;
+}
+
+.statusSteps {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 3rem 0;
+  position: relative;
+}
+
+.step {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.stepBubble {
+  width: 40px;
+  height: 40px;
+  background: #e0e0e0;
+  color: #999;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 0.8rem;
+  font-weight: bold;
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
+}
+
+.step.active .stepBubble {
+  background: #0077CC;
+  color: white;
+  transform: scale(1.1);
+}
+
+.step span {
+  color: #777;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.step.active span {
+  color: #0077CC;
+  font-weight: 600;
+}
+
+.stepConnector {
+  flex: 1;
+  height: 2px;
+  background: #f0f0f0;
+  margin: 0 10px;
+  position: relative;
+  top: -20px;
+}
+
+.step.active + .stepConnector {
+  background: #0077CC;
+}
+
+.deliveryInfo {
+  text-align: center;
+  margin: 2.5rem 0;
+}
+
+.eta {
+  color: #0077CC;
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.contact {
+  color: #555;
+  font-size: 1rem;
+}
+
+.confirmButton {
+  background: #4CAF50;
+  color: white;
+  border: none;
+  padding: 14px 24px;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s;
+  width: 100%;
+  font-size: 1rem;
+  margin-top: 1.5rem;
+}
+
+.confirmButton:hover {
+  background: #3d8b40;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(76, 175, 80, 0.3);
+}
+
+@media (max-width: 768px) {
+  .container {
+      padding: 1.5rem;
+      padding-top: 5rem;
   }
   
   .sectionTitle {
-    font-size: 1.8rem;
-    color: #005588;
-    margin-bottom: 2rem;
-    font-weight: 700;
-    text-align: center;
+      font-size: 1.6rem;
   }
   
   .trackingCard {
-    background: white;
-    padding: 2rem;
-    border-radius: 12px;
-    box-shadow: 0 2px 10px rgba(0, 119, 204, 0.1);
-    margin-top: 1rem;
+      padding: 1.5rem;
   }
   
-  .trackingCard h2 {
-    color: #0077CC;
-    margin-bottom: 1rem;
-  }
-  
-  .trackingCard p {
-    color: #555;
-    margin-bottom: 0.5rem;
+  .orderDetails {
+      grid-template-columns: 1fr;
   }
   
   .statusSteps {
-    display: flex;
-    justify-content: space-between;
-    margin: 2.5rem 0;
-    position: relative;
-  }
-  
-  .statusSteps::before {
-    content: '';
-    position: absolute;
-    top: 20px;
-    left: 0;
-    right: 0;
-    height: 2px;
-    background: #f0f0f0;
-    z-index: 1;
-  }
-  
-  .step {
-    position: relative;
-    z-index: 2;
-    text-align: center;
-    flex: 1;
+      margin: 2rem 0;
   }
   
   .stepBubble {
-    width: 40px;
-    height: 40px;
-    background: #e0e0e0;
-    color: #999;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0 auto 5px;
-    font-weight: bold;
-  }
-  
-  .step.active .stepBubble {
-    background: #0077CC;
-    color: white;
-  }
-  
-  .eta {
-    color: #0077CC;
-    font-size: 1.1rem;
-    text-align: center;
-    margin: 1.5rem 0;
-    font-weight: 600;
-  }
-  
-
-  @media (max-width: 768px) {
-    .container {
-      padding: 1.5rem;
-    }
-    
-    .statusSteps {
-      margin: 2rem 0;
-    }
-    
-    .stepBubble {
-      width: 30px;
-      height: 30px;
+      width: 32px;
+      height: 32px;
       font-size: 0.9rem;
-    }
   }
+  
+  .confirmButton {
+      padding: 12px;
+  }
+}

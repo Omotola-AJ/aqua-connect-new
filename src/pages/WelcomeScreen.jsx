@@ -6,9 +6,6 @@ export default function WelcomeScreen() {
     <div className={styles.welcomeScreen}>
       <div className={styles.welcomeContent}>
         <div className={styles.welcomeHeader}>
-          <p className={styles.welcomeTimestamp}>
-            {new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}
-          </p>
           <h1>WELCOME TO AQUACONNECT</h1>
           <p className={styles.welcomeTagline}>Let's give you the best you deserve</p>
         </div>

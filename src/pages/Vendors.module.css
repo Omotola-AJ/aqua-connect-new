@@ -1,33 +1,90 @@
 .container {
-    padding: 2rem;
-    max-width: 1200px;
-    margin: 0 auto;
-    min-height: 100vh;
+  padding: 2rem;
+  max-width: 1400px;
+  margin: 0 auto;
+  min-height: 100vh;
+  padding-top: 6rem; /* Added space for navbar */
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.pageTitle {
+  color: #005588;
+  margin-bottom: 0.5rem;
+  font-size: 2.2rem;
+  font-weight: 700;
+}
+
+.subtitle {
+  color: #0077aa;
+  font-size: 1.1rem;
+  margin-top: 0;
+  opacity: 0.9;
+}
+
+.vendorGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 2.5rem;
+  padding: 1rem;
+}
+
+/* Loading animation for vendor cards */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.vendorGrid > * {
+  animation: fadeIn 0.5s ease-out;
+  animation-fill-mode: backwards;
+}
+
+.vendorGrid > *:nth-child(1) { animation-delay: 0.1s; }
+.vendorGrid > *:nth-child(2) { animation-delay: 0.2s; }
+.vendorGrid > *:nth-child(3) { animation-delay: 0.3s; }
+.vendorGrid > *:nth-child(4) { animation-delay: 0.4s; }
+.vendorGrid > *:nth-child(5) { animation-delay: 0.5s; }
+.vendorGrid > *:nth-child(6) { animation-delay: 0.6s; }
+
+@media (max-width: 1024px) {
+  .vendorGrid {
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+      padding: 1.5rem;
+      padding-top: 5rem;
   }
   
   .pageTitle {
-    color: #005588;
-    text-align: center;
-    margin-bottom: 2rem;
-    font-size: 2rem;
+      font-size: 1.8rem;
+  }
+  
+  .subtitle {
+      font-size: 1rem;
   }
   
   .vendorGrid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 2rem;
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+      padding: 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+      padding: 1rem;
+      padding-top: 4rem;
   }
   
-  @media (max-width: 768px) {
-    .container {
-      padding: 1.5rem;
-    }
-    
-    .pageTitle {
-      font-size: 1.5rem;
-    }
-    
-    .vendorGrid {
-      grid-template-columns: 1fr;
-    }
+  .pageTitle {
+      font-size: 1.6rem;
   }
+}
