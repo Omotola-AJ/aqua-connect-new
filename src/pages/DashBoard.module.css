@@ -1,0 +1,33 @@
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+  }
+  
+  .sectionTitle {
+    font-size: 1.8rem;
+    color: #005588;
+    margin-bottom: 2rem;
+    font-weight: 700;
+    text-align: center;
+  }
+  
+  .vendorList {
+    display: grid;
+    gap: 1.5rem;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  }
+  
+  @media (max-width: 768px) {
+    .container {
+      padding: 1.5rem;
+    }
+    
+    .sectionTitle {
+      font-size: 1.5rem;
+    }
+    
+    .vendorList {
+      grid-template-columns: 1fr;
+    }
+  }

@@ -1,0 +1,116 @@
+.welcomeScreen {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background: linear-gradient(135deg, #0077cc 0%, #00b4db 100%);
+    color: white;
+    padding: 2rem;
+    position: relative;
+  }
+  
+  .welcomeContent {
+    max-width: 600px;
+    margin: 0 auto;
+    animation: fadeIn 0.8s ease-out;
+  }
+  
+  .welcomeHeader h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    font-weight: 800;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  }
+  
+  .welcomeTimestamp {
+    font-size: 1rem;
+    opacity: 0.8;
+    margin-bottom: 0.5rem;
+  }
+  
+  .welcomeTagline {
+    font-size: 1.2rem;
+    margin-bottom: 3rem;
+    opacity: 0.9;
+    line-height: 1.6;
+  }
+  
+  .welcomeActions {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+    margin-top: 2rem;
+  }
+  
+  .welcomeBtn {
+    padding: 15px 40px;
+    border-radius: 30px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: all 0.3s;
+    min-width: 150px;
+    text-align: center;
+    font-size: 1rem;
+  }
+  
+  .signupBtn {
+    background: white;
+    color: #0077cc;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  }
+  
+  .signupBtn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+    background: #f8f8f8;
+  }
+  
+  .signinBtn {
+    background: transparent;
+    color: white;
+    border: 2px solid rgba(255,255,255,0.8);
+  }
+  
+  .signinBtn:hover {
+    background: rgba(255,255,255,0.1);
+    border-color: white;
+  }
+  
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  @media (max-width: 768px) {
+    .welcomeHeader h1 {
+      font-size: 2rem;
+    }
+    
+    .welcomeTagline {
+      font-size: 1rem;
+      margin-bottom: 2rem;
+    }
+    
+    .welcomeActions {
+      flex-direction: column;
+      gap: 1rem;
+      width: 100%;
+    }
+    
+    .welcomeBtn {
+      width: 100%;
+      padding: 12px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .welcomeScreen {
+      padding: 1.5rem;
+    }
+    
+    .welcomeHeader h1 {
+      font-size: 1.8rem;
+    }
+  }

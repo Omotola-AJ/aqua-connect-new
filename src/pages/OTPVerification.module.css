@@ -1,0 +1,122 @@
+.authContainer {
+    max-width: 450px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 119, 204, 0.1);
+  }
+  
+  .authHeader {
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+  
+  .authHeader h1 {
+    color: #005588;
+    font-size: 1.8rem;
+    margin: 0;
+  }
+  
+  .authSubheader {
+    color: #666;
+    text-align: center;
+    margin-top: 0.5rem;
+    font-size: 0.95rem;
+  }
+  
+  .otpTimer {
+    text-align: center;
+    font-size: 1.2rem;
+    color: #0077cc;
+    margin: 1.5rem 0;
+    font-weight: 600;
+  }
+  
+  .otpInputs {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin: 2rem 0;
+  }
+  
+  .otpInput {
+    width: 60px;
+    height: 60px;
+    text-align: center;
+    font-size: 1.5rem;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    transition: all 0.3s;
+  }
+  
+  .otpInput:focus {
+    border-color: #0077cc;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(0, 119, 204, 0.2);
+  }
+  
+  .otpInstructions {
+    text-align: center;
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+    font-size: 0.95rem;
+  }
+  
+  .otpResend {
+    text-align: center;
+    margin: 1.5rem 0;
+    color: #666;
+  }
+  
+  .resendButton {
+    background: none;
+    border: none;
+    color: #0077cc;
+    text-decoration: underline;
+    cursor: pointer;
+    padding: 0.2rem;
+    font-size: inherit;
+  }
+  
+  .resendButton:disabled {
+    color: #999;
+    cursor: not-allowed;
+    text-decoration: none;
+  }
+  
+  .authButton {
+    background: #0077cc;
+    color: white;
+    padding: 14px;
+    border: none;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s;
+    width: 100%;
+    font-size: 1rem;
+  }
+  
+  .authButton:hover {
+    background: #005fa3;
+  }
+  
+  .authButton:disabled {
+    background: #cccccc;
+    cursor: not-allowed;
+  }
+  
+  @media (max-width: 480px) {
+    .authContainer {
+      margin: 1rem;
+      padding: 1.5rem;
+    }
+  
+    .otpInput {
+      width: 50px;
+      height: 50px;
+      font-size: 1.2rem;
+    }
+  }

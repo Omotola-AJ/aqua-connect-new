@@ -1,0 +1,86 @@
+.vendorCard {
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 12px rgba(0, 119, 204, 0.1);
+    margin-bottom: 1.5rem;
+    transition: all 0.3s ease;
+    border: 1px solid #e0e0e0;
+  }
+  
+  .vendorCard:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 16px rgba(0, 119, 204, 0.15);
+  }
+  
+  .verifiedBadge {
+    background: #0077CC;
+    color: white;
+    padding: 0.25rem 0.75rem;
+    border-radius: 4px;
+    font-size: 0.75rem;
+    display: inline-block;
+    margin-bottom: 0.75rem;
+    font-weight: 600;
+  }
+  
+  .vendorName {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #005588;
+    margin-bottom: 0.75rem;
+  }
+  
+  .vendorDetail {
+    color: #555555;
+    margin-bottom: 0.5rem;
+    font-size: 0.95rem;
+    line-height: 1.4;
+  }
+  
+  .vendorRating {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin: 1rem 0;
+  }
+  
+  .stars {
+    color: #FFC107;
+    letter-spacing: 2px;
+    font-size: 1.1rem;
+  }
+  
+  .ratingText {
+    color: #777777;
+    font-size: 0.9rem;
+  }
+  
+  .orderButton {
+    background: #0077CC;
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 0.95rem;
+    width: 100%;
+    transition: all 0.3s ease;
+  }
+  
+  .orderButton:hover {
+    background: #0066b3;
+    transform: translateY(-2px);
+  }
+  
+  
+  @media (max-width: 768px) {
+    .vendorCard {
+      padding: 1.25rem;
+    }
+    
+    .vendorName {
+      font-size: 1.1rem;
+    }
+  }

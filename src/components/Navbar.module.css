@@ -1,0 +1,54 @@
+.navbar {
+    padding: 1rem 2rem;
+    display: flex;
+    gap: 2rem;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+  }
+  
+  .mainNav {
+    background: #0077CC;
+    justify-content: center;
+  }
+  
+  .welcomeNav {
+    background: transparent;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    justify-content: flex-end;
+  }
+  
+  .navLink {
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    transition: all 0.3s;
+  }
+  
+  .mainNav .navLink:hover {
+    background: rgba(255, 255, 255, 0.2);
+  }
+  
+  .welcomeNav .navLink {
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+  }
+  
+  .welcomeNav .navLink:hover {
+    opacity: 0.8;
+  }
+  
+  @media (max-width: 768px) {
+    .navbar {
+      padding: 1rem;
+      gap: 1rem;
+    }
+    
+    .navLink {
+      padding: 0.5rem;
+      font-size: 0.9rem;
+    }
+  }
